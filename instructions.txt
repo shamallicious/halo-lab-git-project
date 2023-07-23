@@ -1,0 +1,29 @@
+Instructions
+
+1. Fork this repo https://github.com/DevOpsNinjaxx/halo-lab-git-project.git
+
+
+2. Clone the forked repo onto your machine
+
+
+3. Create a new branch <firstname-lastname> e.g aminu-ndakun
+
+
+4. Switch to the new branch
+
+
+5. Open the README.md file, give a space of 2 lines (2 rows), and type in your name in a markdown format also add your motivation for choosing to learn DevOps.
+
+ADD ALSO YOUR BASH PROJECT
+
+NOTE: MAKE SURE YOU NAME YOUR BASH PROJECT FILE <firstname-script.sh> eg. aminu-script.sh
+
+to learn more about markdown formatting: https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
+
+
+6. Add your changes and push them to your forked repo.
+
+Do not forget to create an upstream branch
+Make sure your last commit message should be "completes git project"
+
+7. Create a pull request and add a comment "git project completed. Kindly review"
