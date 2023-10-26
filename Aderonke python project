@@ -1,0 +1,41 @@
+import os
+import psutil
+from flask import Flask, render_template
+import mysql.connector
+
+app = Flask(__name__)
+
+# MySQL Database Configuration
+db_config = {
+    'user': 'your_username',
+    'password': 'your_password',
+    'host': 'localhost',
+    'database': 'your_database',
+}
+
+# Function to get CPU and Memory usage
+def get_system_info():
+    cpu_percent = psutil.cpu_percent()
+    memory_info = psutil.virtual_memory()
+    return {
+        'cpu_percent': cpu_percent,
+        'memory_percent': memory_info.percent,
+    }
+
+# Function to test MySQL connection
+def test_mysql_connection():
+    try:
+        connection = mysql.connector.connect(**db_config)
+        connection.close()
+        return True
+    except mysql.connector.Error as err:
+        return False
+
+@app.route('/')
+def index():
+    system_info = get_system_info()
+    mysql_connected = test_mysql_connection()
+    return render_template('index.html', system_info=system_info, mysql_connected=mysql_connected)
+
+if __name__ == '__main__':
+    app.run(debug=True)
